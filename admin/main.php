@@ -498,6 +498,8 @@ class Brizy_Admin_Main {
 			wp_redirect( $_SERVER['HTTP_REFERER'] );
 		}
 
+
+
 		try {
 
 			$update_post = false;
