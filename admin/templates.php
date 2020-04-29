@@ -211,14 +211,6 @@ class Brizy_Admin_Templates {
 		}
 	}
 
-	static public function registerSupportedPostType() {
-		add_filter( 'brizy_supported_post_types', function ( $posts ) {
-			$posts[] = Brizy_Admin_Templates::CP_TEMPLATE;
-
-			return $posts;
-		} );
-	}
-
 	static public function registerCustomPostTemplate() {
 
 		$labels = array(
@@ -258,6 +250,12 @@ class Brizy_Admin_Templates {
 				'supports'            => array( 'title', 'revisions', 'page-attributes' )
 			)
 		);
+
+		add_filter( 'brizy_supported_post_types', function ( $posts ) {
+			$posts[] = self::CP_TEMPLATE;
+
+			return $posts;
+		} );
 	}
 
 	public function registerTemplateMetaBox() {
